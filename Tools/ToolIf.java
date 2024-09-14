@@ -5,11 +5,12 @@
  *      - the abstract product (tools) 
  */
 
- 
+
 package Tools;
 
 public interface ToolIf 
 {
     double getCost();
+    double getTax();
     void display();
 }

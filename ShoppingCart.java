@@ -50,6 +50,7 @@ public class ShoppingCart
         }
 
         System.out.printf("total cost of tools = $%.2f%n", toolbox.getTotalCost());
+        System.out.printf("total tax of tools = $%.2f%n", toolbox.getTotalTax());
         System.out.printf("total cost of groceries = $%.2f%n%n", groceryBag.getTotalCost());
     }
 }

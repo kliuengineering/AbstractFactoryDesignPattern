@@ -2,7 +2,7 @@
  * Toolbox.java file
  */
 
- 
+
 package Tools;
 
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ public class Toolbox
 {
     private String name;
     private double totalCost;
+    private double totalTax;
     private List<ToolIf> items;
     private int numItems;
 
@@ -64,6 +65,7 @@ public class Toolbox
     {
         this.name = name;
         this.totalCost = 0.0;
+        this.totalTax = 0.0;
         this.items = new ArrayList<>();
         this.numItems = 0;
     }
@@ -75,6 +77,7 @@ public class Toolbox
             items.add(tool);
             numItems++;
             totalCost += tool.getCost();
+            totalTax += tool.getTax();
             return true;
         }
         return false;
@@ -83,6 +86,11 @@ public class Toolbox
     public double getTotalCost()
     {
         return totalCost;
+    }
+
+    public double getTotalTax()
+    {
+        return totalTax;
     }
 
     public void display() 
