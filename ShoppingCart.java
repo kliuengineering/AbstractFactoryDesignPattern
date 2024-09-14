@@ -1,8 +1,13 @@
 /*
- * Shopping Cart Module (currently act as the main for testing purposes, but later we want to implement this as an interface class for the bigger system)
+ * Shopping Cart Module (currently act as the main for testing purposes, 
+ * but later we want to implement this as an interface class for the bigger system)
+ * 
+ * Things to fix:
+ *      1. we should not pass scanner from ShoppingCart to Toolbox and Scredriver
+ *          - this is because we are now coupling those classes together
  */
 
- 
+
 import java.util.Scanner;
 
 import Groceries.GroceryBag;
