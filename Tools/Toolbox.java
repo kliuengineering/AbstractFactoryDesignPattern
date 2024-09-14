@@ -75,6 +75,11 @@ public class Toolbox
         return false;
     }
 
+    public double getTotalCost()
+    {
+        return totalCost;
+    }
+
     public void display() 
     {
         System.out.println();
@@ -83,7 +88,7 @@ public class Toolbox
         {
             item.display();
         }
-        System.out.printf("The total cost of these items is $%.2f%n%n", totalCost);
+        System.out.printf("The total cost of the tools is $%.2f%n", totalCost);
     }
 }
 

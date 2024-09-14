@@ -1,8 +1,8 @@
 JAVAC = javac
 JAVA = java
-MAIN = Adapter
+MAIN = ShoppingCart
 
-SOURCES = Adapter.java Groceries/GroceryBag.java Groceries/GroceryIf.java Tools/Toolbox.java Tools/ToolIf.java
+SOURCES = ShoppingCart.java Groceries/GroceryBag.java Groceries/GroceryIf.java Tools/Toolbox.java Tools/ToolIf.java
 
 CLASSES = $(SOURCES:.java=.class)
 

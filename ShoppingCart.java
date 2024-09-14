@@ -1,3 +1,5 @@
+// Adapter module to interface the Customer
+
 import java.util.Scanner;
 
 import Groceries.GroceryBag;
@@ -7,7 +9,7 @@ import Tools.ToolIf;
 import Tools.Toolbox;
 
 
-public class Adapter
+public class ShoppingCart
 {
     public static void main(String[] args)
     {
@@ -32,7 +34,6 @@ public class Adapter
             groceries[i] = grocery;
         }
 
-
         for (int i = 0; i < tools.length; i++)
         {
             ToolIf tool = Toolbox.createTool(scanner);
@@ -46,7 +47,7 @@ public class Adapter
             tools[i] = tool;
         }
 
-        groceryBag.display();
-        toolbox.display();
+        System.out.printf("total cost of tools = $%.2f%n", toolbox.getTotalCost());
+        System.out.printf("total cost of groceries = $%.2f%n%n", groceryBag.getTotalCost());
     }
 }
