@@ -1,3 +1,11 @@
+/*
+ * ToolIf.java file
+ * 
+ * This module encapsulates 
+ *      - the abstract product (tools) 
+ *      - the concrete product (hammer, scredriver)
+ */
+
 package Tools;
 
 public interface ToolIf 

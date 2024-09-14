@@ -1,4 +1,6 @@
-// Adapter module to interface the Customer
+/*
+ * Shopping Cart Module (currently act as the main for testing purposes, but later we want to implement this as an interface class for the bigger system)
+ */
 
 import java.util.Scanner;
 
