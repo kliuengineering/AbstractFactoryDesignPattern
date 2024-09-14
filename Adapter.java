@@ -29,6 +29,12 @@ public class Adapter
                 System.out.println("Unable to add the grocery!");
             }
 
+            groceries[i] = grocery;
+        }
+
+
+        for (int i = 0; i < tools.length; i++)
+        {
             ToolIf tool = Toolbox.createTool(scanner);
             boolean ret_tool = toolbox.addTool(tool);
 
@@ -37,7 +43,6 @@ public class Adapter
                 System.out.println("Unable to add the grocery!");
             }
 
-            groceries[i] = grocery;
             tools[i] = tool;
         }
 
