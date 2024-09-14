@@ -1,16 +1,19 @@
 JAVAC = javac
-Java = java
-MAIN_CLASS = Toolbox
-CLASS_FILES = $(MAIN_CLASS).class
+JAVA = java
+MAIN = Adapter
 
-all: compile run
+SOURCES = Adapter.java Groceries/GroceryBag.java Groceries/GroceryIf.java Tools/Toolbox.java Tools/ToolIf.java
 
-# let's depend on Toolbox.java
-compile: $(MAIN_CLASS).java
-	$(JAVAC) $(MAIN_CLASS).java
+CLASSES = $(SOURCES:.java=.class)
 
-run:
-	$(JAVA) $(MAIN_CLASS)
+all: $(CLASSES)
+
+# compiles .java files to .class 
+%.class: %.java
+	$(JAVAC) $<
 
 clean:
-	rm -f *.class
+	rm -f *.class Groceries/*.class Tools/*.class
+
+run: all
+	$(JAVA) $(MAIN)
