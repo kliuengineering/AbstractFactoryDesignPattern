@@ -1,8 +1,10 @@
 /*
  * GroceryBag.java file
+ *      issue: this module is tightly coupled, 
+ *              we might want to separate it for abstract factory pattern.
  */
 
- 
+
 package Groceries;
 
 import java.util.Scanner;
