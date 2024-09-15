@@ -36,7 +36,7 @@ public class Toolbox
             select = scanner.nextInt();
             scanner.nextLine();
 
-            switch (select) 
+            switch (select)
             {
                 case 1:
                     System.out.print("What is the hammer's name? ");
