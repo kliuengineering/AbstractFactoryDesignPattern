@@ -6,10 +6,10 @@
 
  package Groceries;
 
- import Factories.ProductFactory;
-
  import java.util.ArrayList;
  import java.util.List;
+
+import factories.ProductFactory;
  
  public class GroceryFactory implements ProductFactory<GroceryIf> 
  {

@@ -1,3 +1,5 @@
+package factories;
+
 public interface ProductFactory<T> 
 {
     T createItem();  // Factory method to create an item (tool or grocery)
