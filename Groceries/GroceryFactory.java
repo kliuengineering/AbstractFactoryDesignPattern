@@ -36,7 +36,8 @@ import factories.ProductFactory;
      @Override
      public boolean addItem(GroceryIf grocery) 
      {
-         if (numItems < 4) {
+         if (numItems < 4) 
+         {
              items.add(grocery);
              numItems++;
              totalCost += grocery.getCost();
@@ -46,15 +47,24 @@ import factories.ProductFactory;
      }
  
      @Override
-     public double getTotalCost() {
+     public double getTotalCost() 
+     {
          return totalCost;
+     }
+
+     @Override
+     public double getTotalTax()
+     {
+        return 0;
      }
  
      @Override
-     public void displayItems() {
+     public void displayItems() 
+     {
          System.out.println();
          System.out.println(name + " is a grocery bag with the following items:");
-         for (GroceryIf item : items) {
+         for (GroceryIf item : items) 
+         {
              item.display();
          }
          System.out.printf("The total cost of the groceries is $%.2f%n", totalCost);

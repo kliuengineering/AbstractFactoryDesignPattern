@@ -55,6 +55,7 @@ public class ToolFactory implements ProductFactory<ToolIf>
         return totalCost;
     }
 
+    @Override
     public double getTotalTax()
     {
         return totalTax;
@@ -70,6 +71,7 @@ public class ToolFactory implements ProductFactory<ToolIf>
             item.display();
         }
         System.out.printf("The total cost of the tools is $%.2f%n", totalCost);
+        System.out.printf("The total tax of the tools is $%.2f%n", totalTax);
     }
 }
 

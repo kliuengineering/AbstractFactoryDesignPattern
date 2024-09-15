@@ -1,14 +1,16 @@
 JAVAC = javac
 JAVA = java
-MAIN = ShoppingCart
+MAIN = TestMain
 
 SOURCES = \
-	ShoppingCart.java \
-	Groceries/GroceryBag.java \
+	TestMain.java \
+	Groceries/GroceryFactory.java \
+	Groceries/CreateGrocery.java \
 	Groceries/GroceryIf.java \
 	Groceries/Apple.java \
 	Groceries/Orange.java \
-	Tools/Toolbox.java \
+	Tools/ToolFactory.java \
+	Tools/CreateTool.java \
 	Tools/ToolIf.java \
 	Tools/Hammer.java \
 	Tools/Screwdriver.java
@@ -22,7 +24,7 @@ all: $(CLASSES)
 	$(JAVAC) $<
 
 clean:
-	rm -f *.class Groceries/*.class Tools/*.class
+	rm -f *.class factories/*.class Groceries/*.class Tools/*.class
 
 run: all
 	$(JAVA) $(MAIN)
