@@ -30,9 +30,13 @@ public class ToolFactory implements ProductFactory<ToolIf>
     }
 
     @Override
-    public ToolIf createItem() 
+    public ToolIf createItems()
     {
-        return CreateTool.createTool(); // Using CreateTool for tool creation
+        boolean ret = true;
+        do {
+            ToolIf tool = CreateTool.createTool();
+            ret = addItem(tool);
+        } while (ret)
     }
 
     @Override
@@ -42,8 +46,8 @@ public class ToolFactory implements ProductFactory<ToolIf>
         {
             items.add(tool);
             numItems++;
-            totalCost += tool.getCost();
-            totalTax += tool.getTax();
+            totalCost += getCost();
+            totalTax += getTax();
             return true;
         }
         return false;

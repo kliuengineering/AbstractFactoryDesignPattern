@@ -28,9 +28,13 @@ import factories.ProductFactory;
      }
  
      @Override
-     public GroceryIf createItem() 
-     {
-         return CreateGrocery.createGrocery(); // Using CreateGrocery for grocery creation
+     public GroceryIf createItems() 
+     {  
+        boolean ret = true;
+        do {
+            GroceryIf grocery = CreateGrocery.createGrocery(); // Using CreateGrocery for grocery creation
+            ret = addItem(grocery);
+        } while (ret);
      }
  
      @Override
@@ -40,7 +44,7 @@ import factories.ProductFactory;
          {
              items.add(grocery);
              numItems++;
-             totalCost += grocery.getCost();
+             totalCost += getCost();
              return true;
          }
          return false;
