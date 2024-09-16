@@ -24,7 +24,7 @@ all: $(CLASSES)
 	$(JAVAC) $<
 
 clean:
-	rm -f *.class factories/*.class Groceries/*.class Tools/*.class
+	rm -f *.class factories/*.class Groceries/*.class Tools/*.class Customers/*.class ShoppingCarts/*.class RetailStores/*.class
 
 run: all
 	$(JAVA) $(MAIN)
