@@ -33,6 +33,7 @@
  *          for customer in customers
  *              customer.fillShoppingCart()
  *              customer.display()
+ *          display()
  *              
  *      display
  *          print avgSpend(), totalRevenue(), productCategoryRevenue
