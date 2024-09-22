@@ -94,6 +94,8 @@ public class Customer {
      */
     public void display() {
         System.out.println("--------------------------------------------------");
+        System.out.println("--------------CUSTOMER SALES REPORT----------------");
+        System.out.println("--------------------------------------------------");
         System.out.println("Customer Name: " + name);
         System.out.printf("Available Cash: $%.2f%n", cash);
         System.out.printf("Total Cart Cost: $%.2f%n", getCartTotal());

@@ -19,7 +19,7 @@ public class CreateGrocery
 
         do 
         {
-            System.out.println("Enter 1 for an apple, or");
+            System.out.println("\nEnter 1 for an apple, or");
             System.out.println("Enter 2 for an orange.");
             System.out.print("Selection: ");
             select = scanner.nextInt();

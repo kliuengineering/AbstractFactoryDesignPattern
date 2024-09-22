@@ -1,7 +1,7 @@
 /**
  * ShoppingCart.java
  * Creates the shopping cart for a customer with
- * a mmap to store the amount spent in each category
+ * a map to store the amount spent in each category
  */
  package ShoppingCarts;
 

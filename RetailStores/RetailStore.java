@@ -101,7 +101,7 @@ public class RetailStore {
      */
     public void display() {
         System.out.println("==================================================");
-        System.out.printf("Retail Store %s's Report", name);
+        System.out.printf("RETAIL STORE %s's REPORT\n", name);
         System.out.printf("Total Revenue: $%.2f%n", total);
         System.out.printf("Average Spend per Customer: $%.2f%n", avgSpend());
         System.out.println("Revenue by Product Category:");

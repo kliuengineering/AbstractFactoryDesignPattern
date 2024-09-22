@@ -18,8 +18,8 @@ public class CreateTool
         double cost;
 
         do
-        {
-            System.out.println("Enter 1 for a hammer, or");
+        {   
+            System.out.println("\nEnter 1 for a hammer, or");
             System.out.println("Enter 2 for a screwdriver.");
             System.out.print("Selection: ");  
             select = scanner.nextInt(); 
