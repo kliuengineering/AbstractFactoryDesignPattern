@@ -9,13 +9,13 @@ package Tools;
 import java.util.ArrayList;
 import java.util.List;
 
-import factories.ProductFactory;
+import ProductFactory.ProductFactoryIf;
 
-public class ToolFactory implements ProductFactory<ToolIf>
+public class ToolFactory implements ProductFactoryIf<ToolIf>
 {
     private String name;
-    private double totalCost;
-    private double totalTax;
+    private double preTaxCost;
+    private double tax = 0.14;
     private List<ToolIf> items;
     private int numItems; 
 
@@ -23,8 +23,7 @@ public class ToolFactory implements ProductFactory<ToolIf>
     public ToolFactory(String name) 
     {
         this.name = name;
-        this.totalCost = 0.0;
-        this.totalTax = 0.0;
+        this.preTaxCost = 0.0;
         this.items = new ArrayList<>();
         this.numItems = 0;
     }
@@ -38,12 +37,11 @@ public class ToolFactory implements ProductFactory<ToolIf>
     @Override
     public boolean addItem(ToolIf tool) 
     {
-        if (numItems < 4) 
+        if (!isFull()) 
         {
             items.add(tool);
             numItems++;
-            totalCost += tool.getCost();
-            totalTax += tool.getTax();
+            preTaxCost += tool.getCost();
             return true;
         }
         return false;
@@ -52,13 +50,13 @@ public class ToolFactory implements ProductFactory<ToolIf>
     @Override
     public double getTotalCost()
     {
-        return totalCost;
+        return preTaxCost+getTotalTax();
     }
 
     @Override
     public double getTotalTax()
     {
-        return totalTax;
+        return tax*preTaxCost;
     }
 
     @Override
@@ -70,8 +68,19 @@ public class ToolFactory implements ProductFactory<ToolIf>
         {
             item.display();
         }
-        System.out.printf("The total cost of the tools is $%.2f%n", totalCost);
-        System.out.printf("The total tax of the tools is $%.2f%n", totalTax);
+        System.out.printf("The total cost of the tools before tax is $%.2f%n", preTaxCost);
+        System.out.printf("The total tax of the tools is $%.2f%n", getTotalTax());
+        System.out.printf("The total cost of the tools is $%.2f%n", getTotalCost());
+
+    }
+
+    @Override
+    public boolean isFull() {
+        if (numItems < 2) {
+            return false;
+        }
+
+        return true;
     }
 }
 

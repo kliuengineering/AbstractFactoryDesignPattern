@@ -9,9 +9,9 @@
  import java.util.ArrayList;
  import java.util.List;
 
-import factories.ProductFactory;
+import ProductFactory.ProductFactoryIf;
  
- public class GroceryFactory implements ProductFactory<GroceryIf> 
+ public class GroceryFactory implements ProductFactoryIf<GroceryIf> 
  {
      private String name;
      private double totalCost;
@@ -36,7 +36,7 @@ import factories.ProductFactory;
      @Override
      public boolean addItem(GroceryIf grocery) 
      {
-         if (numItems < 4) 
+         if (!isFull()) 
          {
              items.add(grocery);
              numItems++;
@@ -69,5 +69,14 @@ import factories.ProductFactory;
          }
          System.out.printf("The total cost of the groceries is $%.2f%n", totalCost);
      }
+
+    @Override
+    public boolean isFull() {
+        if (numItems < 2) {
+            return false;
+        }
+
+        return true;
+    }
  }
  

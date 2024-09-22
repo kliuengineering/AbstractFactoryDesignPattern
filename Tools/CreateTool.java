@@ -1,7 +1,7 @@
 /*
- * ToolFactory is concrete, and it is used for the creation of tools
+ * CreateTool.java
+ * Used for the creation of tools by ToolFactory.java
  */
-
 
 package Tools;
 
@@ -22,7 +22,8 @@ public class CreateTool
             System.out.println("Enter 1 for a hammer, or");
             System.out.println("Enter 2 for a screwdriver.");
             System.out.print("Selection: ");  
-            select = scanner.nextInt(); scanner.nextLine();
+            select = scanner.nextInt(); 
+            scanner.nextLine();
 
             switch (select)
             {
