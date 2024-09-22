@@ -1,10 +1,9 @@
-package ShoppingCarts;
-
-import factories.ProductFactory;
-import Tools.ToolFactory;
-import Tools.ToolIf;
-import Groceries.GroceryFactory;
-import Groceries.GroceryIf;
+/**
+ * ShoppingCart.java
+ * Creates the shopping cart for a customer with
+ * a mmap to store the amount spent in each category
+ */
+ package ShoppingCarts;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -20,21 +19,7 @@ public class ShoppingCart {
 
     // start method
     public void start() {
-        // Tools
-        ToolFactory toolBox = new ToolFactory("Tool Test");
-        ToolIf tool = toolBox.createItem();  // Create a tool
-        toolBox.addItem(tool);
-        toolBox.displayItems();
-        double toolsTotal = toolBox.getTotalCost() + toolBox.getTotalTax();
-        prodCategories.put("Tools", toolsTotal);
-
-        // Groceries
-        GroceryFactory groceryBag = new GroceryFactory("Grocery Test");
-        GroceryIf grocery = groceryBag.createItem();  // Create a grocery
-        groceryBag.addItem(grocery);
-        groceryBag.displayItems();
-        double groceriesTotal = groceryBag.getTotalCost();
-        prodCategories.put("Groceries", groceriesTotal);
+        prodCategories = CreateProductFactories.createProductFactories();
     }
 
     // getCostByCategory method

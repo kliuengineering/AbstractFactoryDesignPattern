@@ -1,3 +1,8 @@
+/**
+ * RetailStore.java
+ * Implements the RetailStore class with a name, a list of customers,
+ * and total revenue generated.
+ */
 package RetailStores;
 
 import Customers.Customer;
@@ -8,12 +13,15 @@ import java.util.HashMap;
 
 public class RetailStore {
     // VARIABLES
-    private String name;
-    private List<Customer> customers;
-    private double total;
+    private String name; 
+    private List<Customer> customers; // List of customers
+    private double total; // Total revenue of the store
     private Map<String, Double> prodCategoryRevenue;
 
-    // Constructor
+    /**
+     * Constructor to initialize the retail store with a name.
+     * @param name The name of the retail store.
+     */
     public RetailStore(String name) {
         this.name = name;
         this.customers = new ArrayList<>();
@@ -21,34 +29,38 @@ public class RetailStore {
         this.prodCategoryRevenue = new HashMap<>();
     }
 
+    /**
+     * Gets the retail store's name.
+     * @return The retail store's name.
+     */
     public String getName() {
         return name;
     }
 
-    // addCustomer method
+    /**
+     * Adds a customer to the retail store.
+     * Adds the retail store to the customer.
+     * @param customer The customer to be added.
+     */
     public void addCustomer(Customer customer) {
         customers.add(customer);
         customer.addStore(this);
     }
 
-    // avgSpend method
+    /**
+     * Calculates the average spend per customer.
+     * @return total revenue divided by number of customers
+     */
     public double avgSpend() {
         if (customers.size() == 0) {
             return 0.0;
         }
-        return totalRevenue() / customers.size();
+        return total / customers.size();
     }
 
-    // totalRevenue method
-    public double totalRevenue() {
-        total = 0.0;
-        for (Customer customer : customers) {
-            total += customer.getCartTotal();
-        }
-        return total;
-    }
-
-    // revenueByCategory method
+    /**
+     * Calculates the revenue by product category.
+     */
     public void revenueByCategory() {
         prodCategoryRevenue.clear();
         for (Customer customer : customers) {
@@ -63,22 +75,33 @@ public class RetailStore {
         }
     }
 
-    // startShopping method
+    /**
+     * Starts the shopping process for all customers.
+     * Displays each customer's shopping cart.
+     * Reduces the amount th customer spent on their cart.
+     * Displays the report of the store
+     */
     public void startShopping() {
         for (Customer customer : customers) {
+            System.out.println("==================================================");
+            System.out.printf("Start shopping for %s \n", customer.getName());
+            System.out.println("==================================================");
             customer.fillShoppingCart();
             customer.display();
             customer.spendCash(customer.getCartTotal());
+            total += customer.getCartTotal();
         }
-        totalRevenue();
         revenueByCategory();
         display();
     }
 
-    // display method
+    /**
+     * Displays the retail store's details, including total revenue, average spend per customer,
+     * and revenue by product category.
+     */
     public void display() {
         System.out.println("==================================================");
-        System.out.printf("Retail Store: %s%n", name);
+        System.out.printf("Retail Store %s's Report", name);
         System.out.printf("Total Revenue: $%.2f%n", total);
         System.out.printf("Average Spend per Customer: $%.2f%n", avgSpend());
         System.out.println("Revenue by Product Category:");

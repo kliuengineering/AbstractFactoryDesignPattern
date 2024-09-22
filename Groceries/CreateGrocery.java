@@ -1,3 +1,7 @@
+/*
+ * CreateGrocery.java
+ * Used for the creation of tools by ToolFactory.java
+ */
 package Groceries;
 
 import java.util.Scanner;
